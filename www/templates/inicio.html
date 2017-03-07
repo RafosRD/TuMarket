@@ -11,6 +11,7 @@
 
     <ion-list>
       <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="producto in productos" ui-sref="tabsController.producto({id:producto.id})">
+        <img src={{producto.introImagen}}>
         <i class="icon ion-chevron-right"></i>
         <h2>{{producto.nombre}}</h2>
         <p>RD${{producto.precio}}</p>

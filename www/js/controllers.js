@@ -1,7 +1,7 @@
 var app = angular.module('app.controllers', [])
 var productos = [
-  {id:"1", nombre:"iphone 7 plus",precio:15000,categoria:"Celulares",descripcion:"el equipo esta totalmente nuevo en su caja", vendedor_id:"2"},
-  {id:"2", nombre:"Samsung galaxy s7",precio:10000,categoria:"Celulares",descripcion:"el equipo tiene su caja, tiene algunos sintomas de desgaste", vendedor_id:"1"}
+  {id:"1", nombre:"iphone 7 plus",precio:15000,categoria:"Celulares",descripcion:"el equipo esta totalmente nuevo en su caja", vendedor_id:"2", introImagen:"img/i71.png"},
+  {id:"2", nombre:"Samsung galaxy s7",precio:10000,categoria:"Celulares",descripcion:"el equipo tiene su caja, tiene algunos sintomas de desgaste", vendedor_id:"1", introImagen:"img/s71.jpg"}
 ];
 
 var partners = [
@@ -10,15 +10,15 @@ var partners = [
 ];
 
 var imagenes = [
-  {id:"1", imagen:"&quot;img/avfsZwJT9WGsBj982ul1_kitten1.jpg&quot;", product_id:"1"},
-  {id:"2", imagen:"&quot;img/avfsZwJT9WGsBj982ul1_kitten1.jpg&quot;", product_id:"1"},
-  {id:"3", imagen:"&quot;img/avfsZwJT9WGsBj982ul1_kitten1.jpg&quot;", product_id:"2"},
-  {id:"4", imagen:"&quot;img/avfsZwJT9WGsBj982ul1_kitten1.jpg&quot;", product_id:"2"},
+  {id:"1", url:"img/i71.png", product_id:"1"},
+  {id:"2", url:"img/i72.jpg", product_id:"1"},
+  {id:"3", url:"img/s71.jpg", product_id:"2"},
+  {id:"4", url:"img/s72.jpg", product_id:"2"},
 ]
 
 function getImagenes(id) {
   return imagenes.filter(function (imagen) {
-    return imagen.porduct_id == id
+    return imagen.product_id == id
   });
 
 }
@@ -39,6 +39,9 @@ function getProducto(id) {
 app.controller('categoriasCtrl', ['$scope', '$stateParams',
 function ($scope, $stateParams) {
 
+  $scope.productos = productos;
+  $scope.imagenes = imagenes;
+
 
 }])
 
@@ -53,6 +56,8 @@ function ($scope, $stateParams) {
 app.controller('ventasCtrl', ['$scope', '$stateParams',
 
 function ($scope, $stateParams) {
+
+  $scope.productos = productos;
 
 
 }])
