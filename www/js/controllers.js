@@ -75,11 +75,56 @@ function ($scope, $stateParams) {
 
 }])
 
-app.controller('signupCtrl', ['$scope', '$stateParams',
-function ($scope, $stateParams) {
 
+  app.controller('signupCtrl', function($scope, $ionicPopup, $state) {
+    $scope.master = {};
 
-}])
+    // Triggered on a button click, or some other target
+    $scope.ConfirmLogin = function(User) {
+      if (User.Password1!=User.Password2) {
+        var alertPopup = $ionicPopup.alert({
+          title: 'Validacion de Registro',
+          template: 'Las Contrasenas no coinciden. Verifique e intente nuevamente '
+        });
+      }
+      else
+      if (User.Name===undefined) {
+        var alertPopup = $ionicPopup.alert({
+          title: 'Validacion de Registro',
+          template: 'Él nombre del usuario es incorrecto. Verifique e intente nuevamente'
+        });
+      }
+      else
+      if (User.Password1===undefined) {
+        var alertPopup = $ionicPopup.alert({
+          title: 'Validacion de Registro',
+          template: 'Él contrasena es incorrecta. Verifique e intente nuevamente'
+        });
+      }
+      else
+      if (User.Email===undefined) {
+        var alertPopup = $ionicPopup.alert({
+          title: 'Validacion de Registro',
+          template: 'Él Correo electronico del usuario es incorrecto. Verifique e intente nuevamente'
+        });
+      }
+      else
+      if (User.Phone===undefined) {
+        var alertPopup = $ionicPopup.alert({
+          title: 'Validacion de Registro',
+          template: 'Él Telefono del usuario es incorrecto. Verifique e intente nuevamente'
+        });
+      }
+      else {
+        var alertPopup = $ionicPopup.alert({
+          title: 'Validacion de Registro',
+          template: 'Usuario ' + User.Name + ' fue creado satisfactoriamente'
+        })
+        window.location.href="#/page1/categorias";
+      }
+    }
+  })
+
 
 app.controller('productoCtrl', ['$scope', '$stateParams',
 function ($scope, $stateParams) {
