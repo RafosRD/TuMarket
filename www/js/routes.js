@@ -113,7 +113,4 @@ angular.module('app.routes', ['ionicUIRouter'])
   })
 
 $urlRouterProvider.otherwise('/page1/categorias')
-
-
-
 });
