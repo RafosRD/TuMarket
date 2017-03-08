@@ -1,0 +1,36 @@
+
+<ion-view title="Signup" id="page6">
+  <ion-content padding="true" class="has-header">
+    <form id="signup-form3" class="list">
+      <div style="margin: 0px; line-height: 250px; background-color: rgb(232, 235, 239); text-align: center;">
+        <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+      </div>
+      <div ng-controller="signupCtrl">
+        <label class="item item-input">
+          <i class="icon ion-ios-person-outline placeholder-icon"></i>
+          <input type="text" class="form-control" placeholder="Nombre Completo" ng-model="User.Name" required>
+        </label>
+        <label class="item item-input">
+          <i class="icon ion-ios-email-outline placeholder-icon"></i>
+          <input type="email" class="form-control" placeholder="Correo" ng-model="User.Email" required>
+        </label>
+        <label class="item item-input">
+          <i class="icon ion-ios-telephone-outline placeholder-icon"></i>
+          <input type="tel" class="form-control" placeholder="Telefono"  ng-model="User.Phone" required>
+        </label>
+        <label class="item item-input">
+          <i class="icon ion-ios-locked-outline placeholder-icon"></i>
+          <input type="password" class="form-control" placeholder="Contraseña" ng-model="User.Password1" required >
+        </label>
+        <label class="item item-input">
+          <i class="icon ion-ios-locked-outline placeholder-icon"></i>
+          <input type="password" class="form-control" placeholder="Repita la Contraseña" ng-model="User.Password2" required>
+        </label>
+        <button type="submit" ng-click="ConfirmLogin(User)" class="button button-block button-positive">
+          Sing Up
+        </button>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>
+

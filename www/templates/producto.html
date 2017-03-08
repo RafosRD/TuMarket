@@ -1,0 +1,35 @@
+<ion-view title="Producto" id="page7">
+  <ion-content ng-controller="productoCtrl" padding="true" class="has-header">
+
+    <h1 id="producto-nombre" style="color:#000000;">{{producto.nombre}}</h1>
+
+    <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider2" delegate-handle="slider2" id="producto-slider2" style="width:100%;height:200px;">
+      <ion-slide-page id="producto-slide210" ng-repeat="imagen in imagenes" style="background:url(&quot;{{imagen.url}}&quot;) no-repeat center;background-size:cover;"></ion-slide-page>
+    </ion-slides>
+
+    <div id="producto-precio" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">RD$ {{producto.precio}}</p>
+    </div>
+
+    <div id="producto-descripcion" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">{{producto.descripcion}}</p>
+    </div>
+
+    <div id="producto-categoria" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">{{producto.categoria}}</p>
+    </div>
+
+    <div id="producto-estado" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">{{producto.estado}}</p>
+    </div>
+
+    <div id="producto-markdown8" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">{{partner.nombre}}</p>
+    </div>
+
+    <div id="producto-vendedor" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">Tel.{{partner.telefono}}</p>
+    </div>
+
+  </ion-content>
+</ion-view>
