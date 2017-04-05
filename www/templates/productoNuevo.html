@@ -2,7 +2,7 @@
   <ion-content padding="true" class="has-header">
     <form id="productoNuevo-form7" class="list">
       <label class="item item-input" id="productoNuevo-input10" name="newProductNombre">
-        <input type="text" placeholder="Nombre">
+        <input type="text" placeholder="Nombre" ng-model="productoNuevo.nombre">
       </label>
     </form>
     <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider3" delegate-handle="slider3" id="productoNuevo-slider3" style="width:100%;height:200px;">
@@ -12,13 +12,13 @@
     </ion-slides>
     <form id="productoNuevo-form9" class="list">
       <label class="item item-input" id="productoNuevo-input11" name="newProductDescription">
-        <input type="text" placeholder="Descripcion detallada del producto">
+        <input type="text" placeholder="Descripcion detallada del producto" ng-model="productoNuevo.descripcion">
       </label>
-      <label class="item item-input" id="productoNuevo-input12" name="newPoductPrice">
-        <input type="number" placeholder="Precio">
+      <label class="item item-input" id="productoNuevo-input12" name="newPoductPrice" >
+        <input type="number" placeholder="Precio" ng-model="productoNuevo.precio">
       </label>
-      <label class="item item-select" id="productoNuevo-select3" name="newProductCategoria">
-        <span class="input-label">Categoria</span>
+      <label class="item item-select" id="productoNuevo-select3" name="newProductCategoria" ng-model="productoNuevo.categoria">
+        <span class="input-label" ng-model="productoNuevo.categoria">Categoria</span>
         <select>
           <option>Hogar</option>
           <option>Electrodomestico</option>
@@ -26,5 +26,6 @@
         </select>
       </label>
     </form>
+    <a ui-sref="tabsController.ventas" ng-click="crear()" id="ventas-button10" class="button button-positive  button-block">Publicar</a>
   </ion-content>
 </ion-view>

@@ -2,7 +2,8 @@ var app = angular.module('app.controllers', [])
 var productos = [
   {id:"1", nombre:"iphone 7 plus",precio:15000,categoria:"Celulares",descripcion:"el equipo esta totalmente nuevo en su caja", vendedor_id:"2", introImagen:"img/i71.png"},
   {id:"2", nombre:"Samsung galaxy s7",precio:10000,categoria:"Celulares",descripcion:"el equipo tiene su caja, tiene algunos sintomas de desgaste", vendedor_id:"1", introImagen:"img/s71.jpg"}
-];
+
+  ];
 
 var partners = [
   {id:"1", nombre:"Pedro Perez", telefono:"8099801234"},
@@ -22,6 +23,7 @@ function getImagenes(id) {
   });
 
 }
+
 
 function getPartner(id) {
   return partners.filter(function (partner) {
@@ -142,6 +144,24 @@ function ($scope, $stateParams) {
 
 app.controller('productoNuevoCtrl', ['$scope', '$stateParams',
 function ($scope, $stateParams) {
+
+  $scope.productoNuevo = {
+    id: "10",
+    nombre: null,
+    precio: null,
+    categoria: null,
+    descripcion:null,
+    vendedor_id: "1",
+    introImagen: "img/i71.png"
+  }
+
+  $scope.crear = function () {
+
+    productos.push($scope.productoNuevo)
+
+  }
+
+
 
 
 }])
