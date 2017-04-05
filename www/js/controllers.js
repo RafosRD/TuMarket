@@ -141,18 +141,18 @@ function ($scope, $stateParams) {
 
 
 }])
-
+var idProducto = 2;
 app.controller('productoNuevoCtrl', ['$scope', '$stateParams',
 function ($scope, $stateParams) {
 
   $scope.productoNuevo = {
-    id: "10",
+    id: (idProducto= idProducto + 1).toString(),
     nombre: null,
     precio: null,
     categoria: null,
     descripcion:null,
     vendedor_id: "1",
-    introImagen: "img/i71.png"
+    introImagen: "img/noimage.png"
   }
 
   $scope.crear = function () {

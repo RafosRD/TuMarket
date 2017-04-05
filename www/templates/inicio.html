@@ -4,13 +4,13 @@
     <form id="inicio-form5" class="list">
       <label class="item item-input" id="inicio-search1" name="seachInicio">
         <i class="icon ion-search placeholder-icon"></i>
-        <input type="search" placeholder="Buscar">
+        <input type="search" placeholder="Buscar" ng-model="buscador">
       </label>
       <button id="inicio-button8" class="button button-positive  button-block">Buscar</button>
     </form>
 
     <ion-list>
-      <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="producto in productos" ui-sref="tabsController.producto({id:producto.id})">
+      <ion-item class="item-thumbnail-left item-icon-right" ng-repeat="producto in productos | filter:buscador" ui-sref="tabsController.producto({id:producto.id})">
         <img src={{producto.introImagen}}>
         <i class="icon ion-chevron-right"></i>
         <h2>{{producto.nombre}}</h2>
